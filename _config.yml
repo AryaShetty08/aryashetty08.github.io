@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: Arya Shetty's Website
+title: Arya Shetty
 
 # Your name to show in the footer
 author: Arya Shetty
@@ -35,7 +35,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/suit_bust.jpg"
+avatar: "/assets/img/suit_bust(1).jpg"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -53,17 +53,11 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  email: "arya.shetty08@gmail.com"
+  github: aryashetty08
+  linkedin: "aryashetty"
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
-#  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -89,7 +83,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+# rss-description: This website is a virtual proof that I'm awesome
 
 ###########################
 # --- General options --- #
@@ -97,15 +91,15 @@ rss-description: This website is a virtual proof that I'm awesome
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
+  twitter: false
+  facebook: false
+  linkedin: false
   vk: false
   reddit: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+# url-pretty: "MyWebsite.com"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
@@ -123,7 +117,7 @@ feed_show_tags: true
 post_search: true
 
 # Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
-edit_page_button: true
+edit_page_button: false
 
 # Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
 # If this setting is off, then long sub-menu words might get cut off
@@ -139,15 +133,21 @@ navbar-var-length: false
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-page-col: "#FFFFFF"
-text-col: "#404040"
+#A1C3D1 light blue 
+#B39BC8 light purple 
+#F0EBF4 whiteish
+#F172A1 pink
+#E64398 dark pink
+
+page-col: "#B39BC8"
+text-col: "#F0EBF4"
 link-col: "#008AFF"
 hover-col: "#0085A1"
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
+navbar-col: "#F172A1"
+navbar-text-col: "#F0EBF4"
+navbar-border-col: "#E64398"
+footer-col: "#A1C3D1"
+footer-text-col: "#F0EBF4"
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
 
