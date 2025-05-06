@@ -1,9 +1,9 @@
 ---
 title: "AR Mural"
-description: "**June 2023 - August 2023**
+description: "**June 2023 - August 2023**<br>
 
 
-              **Technology Components: Windows, Linux, Unity, C#, C/C++, Microsoft Hololens**
+              **Technology Components: Windows, Linux, Unity, C#, C/C++, Microsoft Hololens**<br>
               
               
                 Developed an augmented reality (AR art application where users share paintings and sculptures in real time locations across the world. Powered with unity engine, and used MQTT broker for communnication protocols. Established with publisher-subscirber architecture, uploads user's drawing assets and recieves other players' assets through one server. Successfully ran tests for multiple users to collaborate and work on pieces together. Part of WINLAB Summer Program, code is under the WINLAB's gitlab. 
