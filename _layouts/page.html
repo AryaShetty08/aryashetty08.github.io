@@ -17,7 +17,7 @@ layout: base
 
       {{ content }}
 
-      % display the projects made %
+      <!-- display the projects made -->
       <ul class="project-list list-unstyled">
         {% assign projects = site.projects | sort: "date" | reverse %}
         {% for project in projects %}
