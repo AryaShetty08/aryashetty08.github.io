@@ -144,14 +144,14 @@ navbar-var-length: false
 #E64398 dark pink
 
 page-col: "#B39BC8"
-text-col: "#F0EBF4"
+text-col: "#24292b"
 link-col: "#008AFF"
 hover-col: "#0085A1"
 navbar-col: "#F172A1"
-navbar-text-col: "#F0EBF4"
+navbar-text-col: "#24292b"
 navbar-border-col: "#E64398"
 footer-col: "#A1C3D1"
-footer-text-col: "#F0EBF4"
+footer-text-col: "#24292b"
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
 
