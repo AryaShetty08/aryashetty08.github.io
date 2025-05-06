@@ -7,7 +7,7 @@ columns: 2  # Change this to control how many cards per row (e.g., 2, 3, 4)
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+    <div class="col-xl-10 offset-xl-1 col-lg-12">
       {% if page.before-content %}
         <div class="before-content">
           {% for file in page.before-content %}
@@ -111,9 +111,14 @@ function toggleCard(card) {
 <style>
 .project-card {
   transition: all 0.2s ease;
-  padding: 1rem;
+  height: 100%;
 }
 .project-card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>
