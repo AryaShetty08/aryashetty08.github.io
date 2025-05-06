@@ -1,101 +1,105 @@
 ---
-layout: page
+layout: base
+columns: 2  # Change this to control how many cards per row (e.g., 2, 3, 4)
 ---
 
-<style>
-  .project-card {
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    transition: box-shadow 0.3s;
-    cursor: pointer;
-    overflow: hidden;
-  }
+{% include header.html type="page" %}
 
-  .project-card:hover {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  }
-
-  .project-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
-  .project-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-top: 0.5rem;
-  }
-
-  .project-description-short {
-    color: #555;
-  }
-
-  .expandable-content {
-    margin-top: 1rem;
-    display: none;
-    transition: all 0.3s ease;
-  }
-
-  .project-card.expanded .expandable-content {
-    display: block;
-  }
-
-  .project-links a {
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-  }
-</style>
-
-<div class="container">
-  <div class="row" id="projects-grid">
-    {% assign columns = page.columns | default: 2 %}
-    {% assign col_width = 12 | divided_by: columns %}
-
-    {% for project in site.data.projects %}
-    <div class="col-md-{{ col_width }} mb-4">
-      <div class="project-card" onclick="toggleProject(this)">
-        {% if project.image %}
-        <img src="{{ project.image }}" alt="{{ project.title }} thumbnail">
-        {% endif %}
-
-        <div class="project-title">{{ project.title }}</div>
-
-        <div class="project-description-short">
-          {{ project.short | default: project.description | truncatewords: 20 }}
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <div class="row">
+    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+      {% if page.before-content %}
+        <div class="before-content">
+          {% for file in page.before-content %}
+            {% include {{ file }} %}
+          {% endfor %}
         </div>
+      {% endif %}
 
-        <div class="expandable-content">
-          <p>{{ project.description }}</p>
+      {{ content }}
 
-          <div class="project-links">
-            {% if project.github %}
-            <a href="{{ project.github }}" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            {% endif %}
-            {% if project.video %}
-            <a href="{{ project.video }}" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener">
-              <i class="fas fa-video"></i> Video
-            </a>
-            {% endif %}
-            {% if project.pdf %}
-            <a href="{{ project.pdf }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener">
-              <i class="fas fa-file-pdf"></i> PDF
-            </a>
-            {% endif %}
+      {% if page.after-content %}
+        <div class="after-content">
+          {% for file in page.after-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Project Cards Grid -->
+      {% assign columns = page.columns | default: 2 %}
+      {% assign column_class = 12 | divided_by: columns %}
+      {% assign projects = site.projects | sort: "date" | reverse %}
+
+      <div class="row mt-4">
+        {% for project in projects %}
+          <div class="col-md-{{ column_class }} mb-4">
+            <div class="card h-100 project-card" style="cursor: pointer;" onclick="toggleCard(this)">
+              {% if project.thumbnail %}
+              <img src="{{ project.thumbnail | relative_url }}" class="card-img-top" alt="{{ project.title }}">
+              {% endif %}
+
+              <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+
+                {% if project.description %}
+                  <p class="card-text short-text">{{ project.description | truncate: 100 }}</p>
+                  <p class="card-text full-text d-none">{{ project.description }}</p>
+                {% endif %}
+
+                <div class="project-links d-none">
+                    {% if project.link %}
+                    <a href="{{ project.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View Project</a>
+                    {% endif %}
+                    {% if project.github %}
+                    <a href="{{ project.github }}" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener">GitHub</a>
+                    {% endif %}
+                    {% if project.video %}
+                    <a href="{{ project.video }}" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener">Video</a>
+                    {% endif %}
+                    {% if project.pdf %}
+                    <a href="{{ project.pdf }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener">PDF</a>
+                    {% endif %}
+                  </div>
+                  
+              </div>
+            </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
 
+      {% include comments.html %}
+    </div>
+  </div>
+</main>
+
+<!-- Expand/Collapse Script -->
 <script>
-  function toggleProject(card) {
-    card.classList.toggle('expanded');
+function toggleCard(card) {
+  const shortText = card.querySelector('.short-text');
+  const fullText = card.querySelector('.full-text');
+  const links = card.querySelector('.project-links');
+
+  const isExpanded = !fullText.classList.contains('d-none');
+
+  if (isExpanded) {
+    fullText.classList.add('d-none');
+    shortText.classList.remove('d-none');
+    links?.classList.add('d-none');
+  } else {
+    fullText.classList.remove('d-none');
+    shortText.classList.add('d-none');
+    links?.classList.remove('d-none');
   }
+}
 </script>
+
+<!-- Optional styling -->
+<style>
+.project-card {
+  transition: all 0.2s ease;
+}
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+</style>
