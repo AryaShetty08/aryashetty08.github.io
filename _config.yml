@@ -47,8 +47,7 @@ round-avatar: true
 # For displaying projects and tab style
 collections:
   projects:
-    output: true
-    permalink: /projects/:name/
+    output: false
 
 #####################################
 # --- Footer social media links --- #
