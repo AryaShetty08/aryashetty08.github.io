@@ -44,6 +44,11 @@ round-avatar: true
 # then specify the following parameter
 #title-img: /path/to/image
 
+# For displaying projects and tab style
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 #####################################
 # --- Footer social media links --- #
