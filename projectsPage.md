@@ -1,7 +1,7 @@
 ---
 layout: projects
 title: Projects
-columns: 2
+columns: 3
 permalink: /projectsPage
 ---
 
