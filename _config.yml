@@ -19,12 +19,15 @@ author: Arya Shetty
 # --- List of links in the navigation bar --- #
 ###############################################
 
+# put in quotations the page you want 
+# use - for dropdown 
 navbar-links:
-  About Me: "README"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  Home: "homePage"
+  Experience: "experiencePage"
+  Projects: "projectsPage"
+  Coursework: "coursePage"
+  Skills: "skillsPage"
+  About Me: "aboutPage"
 
 ################
 # --- Logo --- #
