@@ -1,0 +1,52 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <div class="row">
+    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+      {% if page.before-content %}
+        <div class="before-content">
+          {% for file in page.before-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {{ content }}
+
+      <ul class="project-list list-unstyled">
+        {% assign projects = site.projects | sort: "date" | reverse %}
+        {% for project in projects %}
+          <li class="mb-4 p-3 border rounded">
+            <h3 class="mb-1">{{ project.title }}</h3>
+
+            {% if project.thumbnail %}
+              <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" class="img-fluid mb-2" style="max-height: 200px;">
+            {% endif %}
+
+            {% if project.description %}
+              <p>{{ project.description }}</p>
+            {% endif %}
+
+            {% if project.link %}
+              <a href="{{ project.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View Project</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if page.after-content %}
+        <div class="after-content">
+          {% for file in page.after-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% include comments.html %}
+    </div>
+  </div>
+</main>
