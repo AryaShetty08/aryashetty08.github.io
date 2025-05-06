@@ -1,5 +1,6 @@
 ---
 layout: base
+columns: 2  # Change this to control how many cards per row (e.g., 2, 3, 4)
 ---
 
 {% include header.html type="page" %}
@@ -25,7 +26,70 @@ layout: base
         </div>
       {% endif %}
 
+      <!-- Project Cards Grid -->
+      {% assign columns = page.columns | default: 2 %}
+      {% assign column_class = 12 | divided_by: columns %}
+      {% assign projects = site.projects | sort: "date" | reverse %}
+
+      <div class="row mt-4">
+        {% for project in projects %}
+          <div class="col-md-{{ column_class }} mb-4">
+            <div class="card h-100 project-card" style="cursor: pointer;" onclick="toggleCard(this)">
+              {% if project.thumbnail %}
+              <img src="{{ project.thumbnail | relative_url }}" class="card-img-top" alt="{{ project.title }}">
+              {% endif %}
+
+              <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+
+                {% if project.description %}
+                  <p class="card-text short-text">{{ project.description | truncate: 100 }}</p>
+                  <p class="card-text full-text d-none">{{ project.description }}</p>
+                {% endif %}
+
+                {% if project.link %}
+                <a href="{{ project.link }}" class="btn btn-sm btn-outline-primary d-none project-link" target="_blank" rel="noopener">
+                  View Project
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
       {% include comments.html %}
     </div>
   </div>
 </main>
+
+<!-- Expand/Collapse Script -->
+<script>
+function toggleCard(card) {
+  const shortText = card.querySelector('.short-text');
+  const fullText = card.querySelector('.full-text');
+  const link = card.querySelector('.project-link');
+
+  const isExpanded = !fullText.classList.contains('d-none');
+
+  if (isExpanded) {
+    fullText.classList.add('d-none');
+    shortText.classList.remove('d-none');
+    link?.classList.add('d-none');
+  } else {
+    fullText.classList.remove('d-none');
+    shortText.classList.add('d-none');
+    link?.classList.remove('d-none');
+  }
+}
+</script>
+
+<!-- Optional styling -->
+<style>
+.project-card {
+  transition: all 0.2s ease;
+}
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+</style>
