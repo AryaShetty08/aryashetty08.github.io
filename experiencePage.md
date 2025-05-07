@@ -1,5 +1,7 @@
 ---
-layout: page
-title: Welcome!
-subtitle: You can find more about projects I worked on as well as more info about me here!
+layout: experiences
+title: Work Experience
+subtitle: A little bit about some of my work experiences!
+columns: 3
+permalink: /experiencePage
 ---
