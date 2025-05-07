@@ -48,6 +48,8 @@ round-avatar: true
 collections:
   projects:
     output: false
+  experiences:
+    output: false
 
 #####################################
 # --- Footer social media links --- #
