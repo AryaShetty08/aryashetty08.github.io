@@ -10,7 +10,8 @@ description: "<strong>Sep 2024 – Dec 2024</strong><br>
                 "
 
 date: 2024-09-01
-link: https://www.orbit-lab.org/wiki/Other/Summer/2024/sD
+link: https://github.com/vineal101/ReLearnCraft
+github: https://github.com/openai/Video-Pre-Training
 thumbnail: https://aryashetty08.github.io/assets/img/rascal-thumbnail.png
 video: https://www.youtube.com/watch?v=P-VyS8Vu2_M
 pdf: https://aryashetty08.github.io/assets/img/rascal-poster.pdf
