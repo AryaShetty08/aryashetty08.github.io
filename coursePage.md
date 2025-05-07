@@ -1,5 +1,7 @@
 ---
-layout: page
-title: Welcome!
-subtitle: You can find more about projects I worked on as well as more info about me here!
+layout: courseworks
+title: Coursework
+subtitle: Some of the classes I took at Rutgers for my majors!
+columns: 2
+permalink: /coursePage
 ---

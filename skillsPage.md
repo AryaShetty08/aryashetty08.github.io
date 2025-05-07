@@ -1,5 +1,7 @@
 ---
-layout: page
-title: Welcome!
-subtitle: You can find more about projects I worked on as well as more info about me here!
+layout: skills
+title: Skills
+subtitle: Programming Languages, Tools, and Platforms
+columns: 2
+permalink: /skillsPage
 ---

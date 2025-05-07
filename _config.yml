@@ -50,6 +50,12 @@ collections:
     output: false
   experiences:
     output: false
+  courseworks:
+    output: false
+  abouts:
+    output: false
+  skills:
+    output: false
 
 #####################################
 # --- Footer social media links --- #
