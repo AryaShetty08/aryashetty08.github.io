@@ -1,6 +1,6 @@
 ---
 title: "The Perished Game (Demo)"
-description: "<strong>September 2021 - September 2022</strong>
+description: "<strong>September 2021 - September 2022</strong><br>
 
 
               <strong>Technology Components: Unity, C#, Blender</strong><br><br>

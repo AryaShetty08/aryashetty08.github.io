@@ -1,6 +1,6 @@
 ---
 title: "AR Mural"
-description: "<strong>June 2023 - August 2023</strong>
+description: "<strong>June 2023 - August 2023</strong><br>
 
 
               <strong>Technology Components: Windows, Linux, Unity, C#, C/C++, Microsoft Hololens</strong><br><br>
