@@ -12,7 +12,7 @@ description: "<strong>March 2025 - May 2025</strong><br>
 date: 2025-03-01
 github: https://github.com/AryaShetty08/PUF-Modelling-Attacks
 thumbnail: https://aryashetty08.github.io/assets/img/puf-thumbnail.png
-pdf: https://aryashetty08.github.io/assets/img/rascal-poster.pdf
+pdf: https://aryashetty08.github.io/assets/img/puf-report.pdf
 images:
   - https://aryashetty08.github.io/assets/img/puf-nn.png
   - https://aryashetty08.github.io/assets/img/puf-arbiter.png

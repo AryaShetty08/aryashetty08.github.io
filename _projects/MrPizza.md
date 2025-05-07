@@ -8,7 +8,7 @@ description: "<strong>Jan 2024 - May 2024</strong><br>
               
                 Designed full-stack REST-based application with a 12-member team to innovate the online ordering experience for all things concerning online pizza ordering. The website allows users to order from a large menu and pay online with the Stripe API. There is also order tracking integrated with Google Maps. The application also allows user accounts and has a rewards system, where users can gain points to pay for their food. There are also adminstration and employee controls for orders that are sent in. Fine tuned chatbot also responds to customer's frequently asked questions. 
                 "
-date: 2024-01-01
+date: 2024-05-01
 thumbnail: https://aryashetty08.github.io/assets/img/pizza-thumbnail.jpg
 github: https://github.com/Wingo206/Mr-Pizza 
 video: https://www.youtube.com/watch?v=ewmNTPxRq7Q 
