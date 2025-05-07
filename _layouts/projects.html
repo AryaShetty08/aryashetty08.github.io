@@ -43,8 +43,8 @@ columns: 2  # Change this to control how many cards per row (e.g., 2, 3, 4)
                 <h5 class="card-title">{{ project.title }}</h5>
 
                 {% if project.description %}
-                  <p class="card-text short-text">{{ project.description | truncate: 100 }}</p>
-                  <p class="card-text full-text d-none">{{ project.description }}</p>
+                  <p class="card-text short-text">{{ project.description | truncate: 100 | markdownify }}</p>
+                  <p class="card-text full-text d-none">{{ project.description | markdownify }}</p>
                 {% endif %}
                 
                 {% if project.images %}
@@ -112,6 +112,7 @@ function toggleCard(card) {
 .project-card {
   transition: all 0.2s ease;
   height: 100%;
+  border: 2px solid black; /* black border */
 }
 .project-card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -121,4 +122,9 @@ function toggleCard(card) {
   flex-direction: column;
   justify-content: space-between;
 }
-</style>
+.project-card img {
+      object-fit: cover;
+      width: 100%;
+      height: 200px; /* fixed height */
+}
+</style>    
