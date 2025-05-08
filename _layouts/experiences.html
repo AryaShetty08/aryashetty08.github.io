@@ -83,82 +83,67 @@ columns: 2
 
 <!-- Expand/Collapse Script -->
 <script>
-  function toggleCard(card) {
-    const row = card.closest('.row');
-    const col = card.closest('.col-md-6'); // works for 2-column layout (12 / 2)
-    const isExpanded = card.classList.contains('expanded');
-  
-    const allCols = row.querySelectorAll('.col-md-6');
-  
-    if (isExpanded) {
-      // Collapse: show all cards in normal layout
-      card.classList.remove('expanded');
-      col.classList.remove('col-12');
-      col.classList.add('col-md-6');
-      allCols.forEach(c => {
-        if (c !== col) c.style.display = '';
-      });
-  
-      card.querySelector('.short-text')?.classList.remove('d-none');
-      card.querySelector('.full-text')?.classList.add('d-none');
-      card.querySelector('.experience-links')?.classList.add('d-none');
-      card.querySelector('.experience-images')?.classList.add('d-none');
-      const thumbnail = card.querySelector('.card-img-top');
-      if (thumbnail) thumbnail.style.height = '200px';
-  
-    } else {
-      // Expand: make this one full-width, hide the rest
-      allCols.forEach(c => {
-        if (c !== col) c.style.display = 'none';
-      });
-      col.classList.remove('col-md-6');
-      col.classList.add('col-12');
-      card.classList.add('expanded');
-  
-      card.querySelector('.short-text')?.classList.add('d-none');
-      card.querySelector('.full-text')?.classList.remove('d-none');
-      card.querySelector('.experience-links')?.classList.remove('d-none');
-      card.querySelector('.experience-images')?.classList.remove('d-none');
-      const thumbnail = card.querySelector('.card-img-top');
-      if (thumbnail) thumbnail.style.height = 'auto';
-    }
+function toggleCard(card) {
+  const isExpanded = card.classList.contains('expanded');
+  const shortText = card.querySelector('.short-text');
+  const fullText = card.querySelector('.full-text');
+  const links = card.querySelector('.experience-links');
+  const images = card.querySelector('.experience-images');
+  const thumbnail = card.querySelector('.card-img-top');
+
+  if (isExpanded) {
+    // Collapse
+    card.classList.remove('expanded');
+    fullText.classList.add('d-none');
+    shortText.classList.remove('d-none');
+    links?.classList.add('d-none');
+    images?.classList.add('d-none');
+    thumbnail.style.height = '200px';
+  } else {
+    // Expand
+    card.classList.add('expanded');
+    shortText.classList.add('d-none');
+    fullText.classList.remove('d-none');
+    links?.classList.remove('d-none');
+    images?.classList.remove('d-none');
+    thumbnail.style.height = 'auto';
   }
-  </script>  
+}
+</script>
 
 <!-- Styling -->
 <style>
-  .experience-card {
-    transition: all 0.3s ease;
-    border: 2px solid black;
-    overflow: hidden;
-    height: 100%;
+.experience-card {
+  transition: all 0.3s ease;
+  border: 2px solid black;
+  overflow: hidden;
+  height: 100%;
+}
+.experience-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.experience-card.expanded .card-img-top {
+  object-fit: contain;
+}
+.experience-card.collapsed .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.card-img-top {
+  width: 100%;
+  transition: height 0.3s ease;
+}
+.experience-description {
+  transition: opacity 0.3s ease;
+}
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  .experience-card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  }
-  .card-img-top {
-    width: 100%;
-    transition: height 0.3s ease;
-  }
-  .experience-card.expanded .card-img-top {
-    object-fit: contain;
-  }
-  .experience-card.collapsed .card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
-  .experience-description {
-    transition: opacity 0.3s ease;
-  }
-  .fade {
-    opacity: 0;
-    animation: fadeIn 0.3s ease forwards;
-  }
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  </style>
-  
+}
+</style>
