@@ -33,7 +33,7 @@ columns: 2
       <div class="row mt-4">
         {% for coursework in courseworks %}
           <div class="col-md-{{ column_class }} mb-4">
-            <div class="card h-100 coursework-card collapsed" onclick="toggleCard(this)">
+            <div class="card h-100 coursework-card">
               {% if coursework.thumbnail %}
               <div class="thumbnail-wrapper">
                 <img src="{{ coursework.thumbnail | relative_url }}" class="card-img-top" alt="{{ coursework.title }}">
@@ -44,19 +44,18 @@ columns: 2
                 <h5 class="card-title">{{ coursework.title }}</h5>
 
                 {% if coursework.description %}
-                  <div class="card-text coursework-description short-text fade">{{ coursework.description | truncate: 100 | markdownify }}</div>
-                  <div class="card-text coursework-description full-text fade d-none">{{ coursework.description | markdownify }}</div>
+                  <div class="card-text coursework-description">{{ coursework.description | markdownify }}</div>
                 {% endif %}
 
                 {% if coursework.images %}
-                  <div class="coursework-images d-none mt-3 fade">
+                  <div class="coursework-images mt-3">
                     {% for image in coursework.images %}
                       <img src="{{ image | relative_url }}" class="img-fluid mb-2" alt="coursework image">
                     {% endfor %}
                   </div>
                 {% endif %}
 
-                <div class="coursework-links d-none fade">
+                <div class="coursework-links mt-3">
                   {% if coursework.link %}
                   <a href="{{ coursework.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View job</a>
                   {% endif %}
@@ -81,36 +80,6 @@ columns: 2
   </div>
 </main>
 
-<!-- Expand/Collapse Script -->
-<script>
-function toggleCard(card) {
-  const isExpanded = card.classList.contains('expanded');
-  const shortText = card.querySelector('.short-text');
-  const fullText = card.querySelector('.full-text');
-  const links = card.querySelector('.coursework-links');
-  const images = card.querySelector('.coursework-images');
-  const thumbnail = card.querySelector('.card-img-top');
-
-  if (isExpanded) {
-    // Collapse
-    card.classList.remove('expanded');
-    fullText.classList.add('d-none');
-    shortText.classList.remove('d-none');
-    links?.classList.add('d-none');
-    images?.classList.add('d-none');
-    thumbnail.style.height = '200px';
-  } else {
-    // Expand
-    card.classList.add('expanded');
-    shortText.classList.add('d-none');
-    fullText.classList.remove('d-none');
-    links?.classList.remove('d-none');
-    images?.classList.remove('d-none');
-    thumbnail.style.height = 'auto';
-  }
-}
-</script>
-
 <!-- Styling -->
 <style>
 .coursework-card {
@@ -123,27 +92,12 @@ function toggleCard(card) {
   transform: scale(1.01);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
-.coursework-card.expanded .card-img-top {
-  object-fit: contain;
-}
-.coursework-card.collapsed .card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
 .card-img-top {
   width: 100%;
-  transition: height 0.3s ease;
+  height: auto;
+  object-fit: contain;
 }
 .coursework-description {
-  transition: opacity 0.3s ease;
-}
-.fade {
-  opacity: 0;
-  animation: fadeIn 0.3s ease forwards;
-}
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  margin-top: 0.75rem;
 }
 </style>
