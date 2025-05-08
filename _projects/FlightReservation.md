@@ -5,8 +5,8 @@ description: "<strong>Nov 2023 - Dec 2023</strong><br>
 
               <strong>Technology Components: Java, HTML, MySQL</strong><br><br>
               
-              
-                Worked with friends to develop flight reservation web application. Allows access for both members and administrators including basic features for authentication, checking tickets, buying tickets, and managing all members. The program was done with JSP files and run on an Apache Tomcat server. 
+
+                Worked with friends to develop a flight reservation web application. Allows access for both members and administrators, including basic features for authentication, checking tickets, buying tickets, and managing all members. The program was done with JSP files and ran on an Apache Tomcat server. 
                 "
 date: 2023-11-01
 thumbnail: https://aryashetty08.github.io/assets/img/flight-img1.jpg

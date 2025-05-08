@@ -6,7 +6,7 @@ description: "<strong>Nov 2022</strong><br>
               <strong>Technology Components: Java, JavaFX</strong><br><br>
               
               
-                This project is the final version of the Gym Manager application which introduces the front end through JavaFX. 
+                This project is the final version of the Gym Manager application, which introduces the front end through JavaFX. 
                 "
 
 date: 2022-11-01

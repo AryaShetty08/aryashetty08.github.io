@@ -1,5 +1,5 @@
 ---
-title: "Electrical & Computer Engineering"
+title: "Honors Electrical & Computer Engineering"
 description: "Honors Intro Engineering I <br>
             Intro Computer For Engineering <br>
             Principles of Electrical Engineering I & Lab <br>

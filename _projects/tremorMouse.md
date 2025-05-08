@@ -5,7 +5,7 @@ description: "<strong>Sep 2021 – Dec 2021</strong><br>
 
               <strong>Technology Components: Arduino, CAD, 3D-printed, Human-Centered Design</strong><br><br>
               
-              
+    
                 Worked on a human-centered design project with Rutgers Honors Academy classmates to create a mouse to nullify the distracting movements tremors create when using a simple mouse. Used CAD to create a vertically ergonomic-shaped mouse, which was 3D printed and made a usable prototype using an Arduino for mouse functionality. We were selected from the class year to present the mouse design in the Honors Symposium for professors and research students
                 "
 

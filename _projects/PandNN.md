@@ -5,8 +5,8 @@ description: "<strong>April 2024 - May 2024</strong><br>
 
               <strong>Technology Components: MATLAB, Perceptron, Multilayered Perceptron</strong><br><br>
               
-              
-                Worked with a team to make an implementation of the Perceptron and Multi-Layered Perceptron algorithms in MATLAB from scratch for faces and digits dataset.
+            
+                Worked with a team to make an implementation of the Perceptron and Multi-Layered Perceptron algorithms in MATLAB from scratch for the faces and digits datasets.
                 "
 
 date: 2024-04-01
