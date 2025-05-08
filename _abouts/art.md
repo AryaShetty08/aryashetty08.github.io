@@ -1,7 +1,7 @@
 ---
 title: "art"
 description: "
-                Developed an augmented reality (AR) art application where users share paintings and sculptures in real-time locations across the world. Powered with the Unity engine, and used an MQTT broker for communication protocols. Established with a publisher-subscriber architecture, uploads the user's drawing assets and receives other players' assets through one server. Successfully ran tests for multiple users to collaborate and work on pieces together. Part of the WINLAB Summer Program, the code is under WINLAB's GitLab.
+                I've been drawing ever since I was in elementary school, and I even got to paint one of the walls of my middle school. At the start of college, I decided to take things more seriously and bought a sketch tablet and more drawing supplies. Ever since then, in my free time, I have been learning more drawing techniques and have started making stand-alone pieces. Here you can see some of the stuff I have made. 
                 "
 date: 2023-06-01
 thumbnail: https://aryashetty08.github.io/assets/img/ar-mural-thumbnail.jpg
