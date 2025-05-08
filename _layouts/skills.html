@@ -28,7 +28,8 @@ columns: 2
 
             {% assign columns = page.columns | default: 2 %}
             {% assign column_class = 12 | divided_by: columns %}
-            {% assign skills = site.skills | sort: "date" | reverse %}
+            {% assign skills = site.skills | sort: "date" %}
+
 
             <div class="row mt-4">
                 {% for skill in skills %}
