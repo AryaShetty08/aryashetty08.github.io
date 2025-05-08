@@ -1,0 +1,149 @@
+---
+layout: base
+columns: 2
+---
+
+{% include header.html type="page" %}
+
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <div class="row">
+    <div class="col-12">
+      {% if page.before-content %}
+        <div class="before-content">
+          {% for file in page.before-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {{ content }}
+
+      {% if page.after-content %}
+        <div class="after-content">
+          {% for file in page.after-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% assign columns = page.columns | default: 2 %}
+      {% assign column_class = 12 | divided_by: columns %}
+      {% assign abouts = site.abouts | sort: "date" | reverse %}
+
+      <div class="row mt-4">
+        {% for about in abouts %}
+          <div class="col-md-{{ column_class }} mb-4">
+            <div class="card h-100 about-card collapsed" onclick="toggleCard(this)">
+              {% if about.thumbnail %}
+              <div class="thumbnail-wrapper">
+                <img src="{{ about.thumbnail | relative_url }}" class="card-img-top" alt="{{ about.title }}">
+              </div>
+              {% endif %}
+
+              <div class="card-body">
+                <h5 class="card-title">{{ about.title }}</h5>
+
+                {% if about.description %}
+                  <div class="card-text about-description short-text fade">{{ about.description | truncate: 100 | markdownify }}</div>
+                  <div class="card-text about-description full-text fade d-none">{{ about.description | markdownify }}</div>
+                {% endif %}
+
+                {% if about.images %}
+                  <div class="about-images d-none mt-3 fade">
+                    {% for image in about.images %}
+                      <img src="{{ image | relative_url }}" class="img-fluid mb-2" alt="about image">
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <div class="about-links d-none fade">
+                  {% if about.link %}
+                  <a href="{{ about.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View job</a>
+                  {% endif %}
+                  {% if about.github %}
+                  <a href="{{ about.github }}" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener">GitHub</a>
+                  {% endif %}
+                  {% if about.video %}
+                  <a href="{{ about.video }}" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener">Video</a>
+                  {% endif %}
+                  {% if about.pdf %}
+                  <a href="{{ about.pdf }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener">Poster/Report</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% include comments.html %}
+    </div>
+  </div>
+</main>
+
+<!-- Expand/Collapse Script -->
+<script>
+function toggleCard(card) {
+  const isExpanded = card.classList.contains('expanded');
+  const shortText = card.querySelector('.short-text');
+  const fullText = card.querySelector('.full-text');
+  const links = card.querySelector('.about-links');
+  const images = card.querySelector('.about-images');
+  const thumbnail = card.querySelector('.card-img-top');
+
+  if (isExpanded) {
+    // Collapse
+    card.classList.remove('expanded');
+    fullText.classList.add('d-none');
+    shortText.classList.remove('d-none');
+    links?.classList.add('d-none');
+    images?.classList.add('d-none');
+    thumbnail.style.height = '200px';
+  } else {
+    // Expand
+    card.classList.add('expanded');
+    shortText.classList.add('d-none');
+    fullText.classList.remove('d-none');
+    links?.classList.remove('d-none');
+    images?.classList.remove('d-none');
+    thumbnail.style.height = 'auto';
+  }
+}
+</script>
+
+<!-- Styling -->
+<style>
+.about-card {
+  transition: all 0.3s ease;
+  border: 2px solid black;
+  overflow: hidden;
+  height: 100%;
+}
+.about-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.about-card.expanded .card-img-top {
+  object-fit: contain;
+}
+.about-card.collapsed .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.card-img-top {
+  width: 100%;
+  transition: height 0.3s ease;
+}
+.about-description {
+  transition: opacity 0.3s ease;
+}
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+</style>
