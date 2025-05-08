@@ -30,11 +30,10 @@ columns: 2
             {% assign column_class = 12 | divided_by: columns %}
             {% assign skills = site.skills | sort: "date" %}
 
-
             <div class="row mt-4">
                 {% for skill in skills %}
                 <div class="col-md-{{ column_class }} mb-4">
-                    <div class="card h-100 skill-card">
+                    <div class="card h-100 skill-card" onclick="toggleSkillCard(this)">
                         {% if skill.thumbnail %}
                         <div class="thumbnail-wrapper">
                             <img src="{{ skill.thumbnail | relative_url }}" class="card-img-top"
@@ -46,18 +45,20 @@ columns: 2
                             <h5 class="card-title">{{ skill.title }}</h5>
 
                             {% if skill.description %}
-                            <div class="card-text skill-description">{{ skill.description | markdownify }}</div>
+                            <div class="card-text skill-description d-none">
+                                {{ skill.description | markdownify }}
+                            </div>
                             {% endif %}
 
                             {% if skill.images %}
-                            <div class="skill-images mt-3">
+                            <div class="skill-images mt-3 d-none">
                                 {% for image in skill.images %}
                                 <img src="{{ image | relative_url }}" class="img-fluid mb-2" alt="skill image">
                                 {% endfor %}
                             </div>
                             {% endif %}
 
-                            <div class="skill-links mt-3">
+                            <div class="skill-links mt-3 d-none">
                                 {% if skill.link %}
                                 <a href="{{ skill.link }}" class="btn btn-sm btn-outline-primary" target="_blank"
                                     rel="noopener">View job</a>
@@ -95,6 +96,7 @@ columns: 2
         height: 100%;
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
     }
 
     .skill-card:hover {
@@ -102,12 +104,10 @@ columns: 2
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
-    /* Square thumbnail container */
     .thumbnail-wrapper {
         position: relative;
         width: 100%;
         padding-top: 100%;
-        /* 1:1 aspect ratio */
         overflow: hidden;
         background: white;
         display: flex;
@@ -145,4 +145,23 @@ columns: 2
         gap: 0.5rem;
         margin-top: 1rem;
     }
+
+    .d-none {
+        display: none !important;
+    }
 </style>
+
+<!-- Toggle Script -->
+<script>
+function toggleSkillCard(card) {
+    const desc = card.querySelector('.skill-description');
+    const images = card.querySelector('.skill-images');
+    const links = card.querySelector('.skill-links');
+
+    const isVisible = !desc?.classList.contains('d-none');
+
+    if (desc) desc.classList.toggle('d-none', isVisible);
+    if (images) images.classList.toggle('d-none', isVisible);
+    if (links) links.classList.toggle('d-none', isVisible);
+}
+</script>
