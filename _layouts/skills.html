@@ -33,7 +33,7 @@ columns: 2
             <div class="row mt-4">
                 {% for skill in skills %}
                 <div class="col-md-{{ column_class }} mb-4">
-                    <div class="card h-100 skill-card" onclick="toggleSkillCard(this)">
+                    <div class="card h-100 skill-card collapsed" onclick="toggleSkillCard(this)">
                         {% if skill.thumbnail %}
                         <div class="thumbnail-wrapper">
                             <img src="{{ skill.thumbnail | relative_url }}" class="card-img-top"
@@ -45,20 +45,20 @@ columns: 2
                             <h5 class="card-title">{{ skill.title }}</h5>
 
                             {% if skill.description %}
-                            <div class="card-text skill-description d-none">
+                            <div class="card-text skill-description">
                                 {{ skill.description | markdownify }}
                             </div>
                             {% endif %}
 
                             {% if skill.images %}
-                            <div class="skill-images mt-3 d-none">
+                            <div class="skill-images mt-3">
                                 {% for image in skill.images %}
                                 <img src="{{ image | relative_url }}" class="img-fluid mb-2" alt="skill image">
                                 {% endfor %}
                             </div>
                             {% endif %}
 
-                            <div class="skill-links mt-3 d-none">
+                            <div class="skill-links mt-3">
                                 {% if skill.link %}
                                 <a href="{{ skill.link }}" class="btn btn-sm btn-outline-primary" target="_blank"
                                     rel="noopener">View job</a>
@@ -90,13 +90,19 @@ columns: 2
 <!-- Styling -->
 <style>
     .skill-card {
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         border: 2px solid black;
         overflow: hidden;
-        height: 100%;
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.9);
         cursor: pointer;
+        max-height: 300px;
+        padding-bottom: 0;
+    }
+
+    .skill-card.expanded {
+        max-height: 1000px;
+        padding-bottom: 1rem;
     }
 
     .skill-card:hover {
@@ -131,11 +137,23 @@ columns: 2
         font-size: 1.2rem;
     }
 
-    .skill-description {
-        text-align: center;
-        font-size: 0.95rem;
-        margin-top: 0.75rem;
-        color: #333;
+    .skill-description,
+    .skill-images,
+    .skill-links {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .skill-card.expanded .skill-description,
+    .skill-card.expanded .skill-images,
+    .skill-card.expanded .skill-links {
+        opacity: 1;
+        pointer-events: auto;
+        max-height: 500px;
+        margin-top: 1rem;
     }
 
     .skill-links {
@@ -143,25 +161,12 @@ columns: 2
         justify-content: center;
         flex-wrap: wrap;
         gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .d-none {
-        display: none !important;
     }
 </style>
 
 <!-- Toggle Script -->
 <script>
 function toggleSkillCard(card) {
-    const desc = card.querySelector('.skill-description');
-    const images = card.querySelector('.skill-images');
-    const links = card.querySelector('.skill-links');
-
-    const isVisible = !desc?.classList.contains('d-none');
-
-    if (desc) desc.classList.toggle('d-none', isVisible);
-    if (images) images.classList.toggle('d-none', isVisible);
-    if (links) links.classList.toggle('d-none', isVisible);
+    card.classList.toggle('expanded');
 }
 </script>
