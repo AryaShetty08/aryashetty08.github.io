@@ -1,12 +1,13 @@
 ---
-title: "engin"
-description: "<strong>June 2023 - August 2023</strong><br>
-
-
-              <strong>Technology Components: Windows, Linux, Unity, C#, C/C++, Microsoft Hololens</strong><br><br>
-              
-              
-                Worked
+title: "Computer Science"
+description: "Intro to Computer Science <br>
+            Intro to Linear Algebra <br>
+            Data Structures <br>
+            Software Methodology <br>
+            Principles of Info & Data Management <br>
+            Design & Analysis of Computer Algorithms <br>
+            Intro to Artificial Intelligence <br>
+            Intro Computer Robotics <br>
+            Deep Learning <br>
                 "
-link: https://winlab.rutgers.edu/prospective-students/summer-internship/
 ---

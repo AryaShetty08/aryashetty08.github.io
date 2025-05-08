@@ -1,12 +1,23 @@
 ---
-title: "engin"
-description: "<strong>June 2023 - August 2023</strong><br>
-
-
-              <strong>Technology Components: Windows, Linux, Unity, C#, C/C++, Microsoft Hololens</strong><br><br>
-              
-              
-                Worked 
+title: "Electrical & Computer Engineering"
+description: "Honors Intro Engineering I <br>
+            Intro Computer For Engineering <br>
+            Principles of Electrical Engineering I & Lab <br>
+            Digital Logic Design & Lab <br>
+            Principles of Electrical Engineering II & Lab <br>
+            Probability & Random Processes <br>
+            Computer Architecture & Assembly Language & Lab <br>
+            Professionalism/Ethic <br>
+            Honors Engineering D&D I <br>
+            Linear System & Signals <br>
+            Electronics Devices <br>
+            Intro to Computer Systems <br>
+            Software Engineering <br>
+            Network Centric Programming <br>
+            Honors Engineering D&D II <br>
+            Digital System Design <br>
+            Distributed Deep Learning <br>
+            Hardware and Systems Security <br>
+            Capstone Design ECE <br>
                 "
-link: https://winlab.rutgers.edu/prospective-students/summer-internship/
 ---
