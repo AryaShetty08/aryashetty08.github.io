@@ -28,7 +28,7 @@ columns: 2
 
       {% assign columns = page.columns | default: 2 %}
       {% assign column_class = 12 | divided_by: columns %}
-      {% assign abouts = site.abouts | sort: "date" | reverse %}
+      {% assign abouts = site.abouts | sort: "date" %}
 
       <div class="row mt-4">
         {% for about in abouts %}
