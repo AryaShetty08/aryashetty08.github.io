@@ -30,10 +30,11 @@ columns: 2
             {% assign column_class = 12 | divided_by: columns %}
             {% assign skills = site.skills | sort: "date" %}
 
+
             <div class="row mt-4">
                 {% for skill in skills %}
                 <div class="col-md-{{ column_class }} mb-4">
-                    <div class="card h-100 skill-card collapsed" onclick="toggleSkillCard(this)">
+                    <div class="card h-100 skill-card">
                         {% if skill.thumbnail %}
                         <div class="thumbnail-wrapper">
                             <img src="{{ skill.thumbnail | relative_url }}" class="card-img-top"
@@ -45,9 +46,7 @@ columns: 2
                             <h5 class="card-title">{{ skill.title }}</h5>
 
                             {% if skill.description %}
-                            <div class="card-text skill-description">
-                                {{ skill.description | markdownify }}
-                            </div>
+                            <div class="card-text skill-description">{{ skill.description | markdownify }}</div>
                             {% endif %}
 
                             {% if skill.images %}
@@ -90,19 +89,12 @@ columns: 2
 <!-- Styling -->
 <style>
     .skill-card {
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
         border: 2px solid black;
         overflow: hidden;
+        height: 100%;
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.9);
-        cursor: pointer;
-        max-height: 300px;
-        padding-bottom: 0;
-    }
-
-    .skill-card.expanded {
-        max-height: 1000px;
-        padding-bottom: 1rem;
     }
 
     .skill-card:hover {
@@ -110,10 +102,12 @@ columns: 2
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
+    /* Square thumbnail container */
     .thumbnail-wrapper {
         position: relative;
         width: 100%;
         padding-top: 100%;
+        /* 1:1 aspect ratio */
         overflow: hidden;
         background: white;
         display: flex;
@@ -137,23 +131,11 @@ columns: 2
         font-size: 1.2rem;
     }
 
-    .skill-description,
-    .skill-images,
-    .skill-links {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        max-height: 0;
-        overflow: hidden;
-    }
-
-    .skill-card.expanded .skill-description,
-    .skill-card.expanded .skill-images,
-    .skill-card.expanded .skill-links {
-        opacity: 1;
-        pointer-events: auto;
-        max-height: 500px;
-        margin-top: 1rem;
+    .skill-description {
+        text-align: center;
+        font-size: 0.95rem;
+        margin-top: 0.75rem;
+        color: #333;
     }
 
     .skill-links {
@@ -161,12 +143,6 @@ columns: 2
         justify-content: center;
         flex-wrap: wrap;
         gap: 0.5rem;
+        margin-top: 1rem;
     }
 </style>
-
-<!-- Toggle Script -->
-<script>
-function toggleSkillCard(card) {
-    card.classList.toggle('expanded');
-}
-</script>
