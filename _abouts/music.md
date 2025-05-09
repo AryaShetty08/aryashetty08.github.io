@@ -5,5 +5,5 @@ description: "
                 "
 date: 2023-06-07
 thumbnail: https://aryashetty08.github.io/assets/img/spotify-thumb.png
-link: 
+link: https://open.spotify.com/playlist/3Wa0vUvzv5fc0DcA4lyWzZ?si=c555a8bcd1b145ba 
 ---

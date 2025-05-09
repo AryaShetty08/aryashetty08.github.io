@@ -5,5 +5,5 @@ description: "
                 "
 date: 2023-06-09
 thumbnail: https://aryashetty08.github.io/assets/img/hunt-thumb.jpg
-link: 
+link: https://wingo206.github.io/manhunt/
 ---

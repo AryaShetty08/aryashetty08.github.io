@@ -5,5 +5,4 @@ description: "
                 "
 date: 2023-06-08
 thumbnail: https://aryashetty08.github.io/assets/img/japan-thumb.jpg
-link: 
 ---
