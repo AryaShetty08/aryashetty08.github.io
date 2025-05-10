@@ -5,5 +5,7 @@ description: "
                 "
 date: 2023-06-02
 thumbnail: https://aryashetty08.github.io/assets/img/games-thumbnail.png
-link: 
+steam: https://steamcommunity.com/profiles/76561198262195089 
+psn: http://psnprofiles.com/Arya9078
+switch: Oryeaz
 ---
