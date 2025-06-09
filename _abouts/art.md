@@ -5,5 +5,5 @@ description: "
                 "
 date: 2023-06-01
 thumbnail: https://aryashetty08.github.io/assets/img/art-thumbnail.png
-link: 
+link: https://drive.google.com/drive/folders/1dnNqRNXJv3bETqE0XxqFcK3b4SnOQ6B2?usp=sharing
 ---
