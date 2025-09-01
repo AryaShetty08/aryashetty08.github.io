@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Welcome!
-subtitle: I am Arya Shetty, a Senior in the Honors Academy School of Engineering at Rutgers University. I’m pursuing a degree in Electrical and Computer Engineering along with a second major in Computer Science, expected to graduate in 2025. From training bots to complete tasks in Minecraft to developing a full self-driving pipeline, I am very passionate about learning and creating new projects. Here you will find more about me in my professional and personal life.
+subtitle: I am Arya Shetty, an AI/ML Software Engineer at KPMG and a recent graduate of Rutgers University’s Honors Academy School of Engineering. I earned degrees in Electrical and Computer Engineering and Computer Science in 2025. From training bots to complete tasks in Minecraft to developing a full self-driving pipeline, I’m passionate about building intelligent systems and creating impactful projects. Here you’ll find more about me in both my professional and personal life.
 columns: 3
 permalink: /homePage
 ---
