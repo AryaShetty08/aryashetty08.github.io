@@ -9,6 +9,11 @@ description: "<strong>July 2025 - Present</strong><br><br>
               Completed a month-long internal bootcamp focused on Generative AI and modern development practices.<br>
               Enhancing an existing asset management application by integrating GenAI tools (LangChain, MCP) to automate document analysis and processing.<br>
               Building connectors to integrate the application into KPMG’s broader client and internal gateway platform for seamless access.
+
+              Started work on full-stack features for an internal REITable questionnaire portal using Angular, C#, HTML/CSS, and Python, enabling administrator access control, questionnaire creation, and form submission.
+
+              Deployed and maintained application components in Azure, integrating AI-driven analysis modules to generate automated insights from completed questionnaires.
+
               "
 
 date: 2025-07-07
